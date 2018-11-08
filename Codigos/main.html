@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GeoPuzzle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|PT+Mono" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="menu.css" />
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+    <div id="menu" class="menu">
+        <h1 class="titulo">GeoPuzzle</h1>
+        <input class="button" type="button" value="Jogar" onclick="abrirJogar('jogar')"><br>
+        <input class="button" type="button" value="Instruções" onclick="abrirInst('instrucoes')"><br>
+        <input class="button" type="button" value="Créditos" onclick="abrirCred('creditos')"><br>
+    </div>
+
+    <div id="jogar" class="modal">
+        <div class="jogar">
+            <button class="botaoradius fechar">X</button>
+            <h1 class="titulo">Nível</h1>
+            <form>
+                <input class="button" type="button" value="Fácil" onclick="location.href='facil.html'"><br>
+                <input class="button" type="button" value="Médio" onclick="location.href='medio.html'"><br>
+                <input class="button" type="button" value="Difícil" onclick="location.href='dificil.html'"><br>
+            </form>
+        </div>
+    </div>
+
+    <div id="instrucoes" class="modal">
+        <div class="instrucoes">
+            <button class="botaoradius fechar">X</button>
+            <button class="botaoradius next">></button>
+            <h1 class="titulo inst">Instruções</h1>
+            <div class="insttext">
+                <p>Para jogar,deve-se selecionar o botão "Jogar", e após o nível deve ser selecionado.</p>
+                <p>O nível altera a quantidade de imagens e a quantidade de peças de cada imagem. Ex.:</p><br>
+                <p>O nível fácil possui 16 peças e 4 imagens;</p>
+                <p>O nível médio possui 36 peças e 6 imagens;</p>
+                <p>O nível difícil possui x peças e x imagens.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="instrucoes1" class="modal">
+        <div class="instrucoes">
+            <button class="botaoradius fechar">X</button>
+            <button class="botaoradius next"><</button>
+            <h1 class="titulo inst">Instruções</h1>
+            <div class="insttext">
+                <p>O mouse deve ser utilizado para trocar a imagem desejada, e a próxima será escolhida de forma aleatória.</p>
+                <p>Quando uma imagem for completada, será perguntado a cidade/país de onde o ponto turístico pertence.</p>
+                <p>Para responder a pergunta, pode-se soliciar algumas dicas (Máximo 3) para auxiliar na resposta.</p>
+                <p>Assim que todas as imagens forem concluídas, será possível selecionar a miniatura da mesma para ver curiosidades e a imagem completa.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="creditos" class="modal">
+        <div class="creditos">
+            <button class="botaoradius fechar">X</button>
+            <h1 class="titulo">Equipe</h1>
+            <div class="insttext">
+                <p>Adriano Lopes - Função</p>
+                <p>Izaque Vieira - Função</p>
+                <p>Olávio Gonçalves - Função</p>
+                <p>Samuel Henrique - Função</p>
+                <p>Washington Machado - Função</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
