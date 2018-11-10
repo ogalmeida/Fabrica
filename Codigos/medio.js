@@ -7,19 +7,19 @@ var Peru = 0;
 var contadorTotal = 0;
 var numAnt = -1;
 
-// window.onload = function(){
-//     document.getElementById('telaInicio').addEventListener('click', (e) => {
-//         if(e.target.id == 'botaoradius fechar' || e.target.id == 'telaInicio'){
-//             document.getElementById('telaInicio').classList.remove('mostrar');
-//         }
-//     });
-//     mistura();
-// }
+window.onload = function(){
+    document.getElementById('telaInicio').addEventListener('click', (e) => {
+        if(e.target.id == 'botaoradius fechar' || e.target.id == 'telaInicio'){
+            document.getElementById('telaInicio').classList.remove('mostrar');
+        }
+    });
+    mistura();
+}
 
 function mistura(){
-    // if(Chile == -1 && China == -1 && Grecia == -1 && India == -1 && Italia == -1 && Peru == -1){
-    //     document.getElementById('modalGanhou').classList.add('mostrar');
-    // }
+    if(Chile == -1 && China == -1 && Grecia == -1 && India == -1 && Italia == -1 && Peru == -1){
+        document.getElementById('modalGanhou').classList.add('mostrar');
+    }
     for(let i = 0; i < 36; i++){
         let num = aleatorio();
         while(verificaAleatorio(num) == 0){
@@ -27,27 +27,27 @@ function mistura(){
         }
         switch(num){
             case 0:
-                document.getElementById(i).src = `Imagens/Chile/${i}.jpeg`;
+                document.getElementById(i).src = `Imagens/Medio/Chile/${i}.jpeg`;
                 document.getElementById(i).alt = `${num}`;
                 break;
             case 1:
-                document.getElementById(i).src = `Imagens/China/${i}.jpeg`;
+                document.getElementById(i).src = `Imagens/Medio/China/${i}.jpeg`;
                 document.getElementById(i).alt = `${num}`;
                 break;
             case 2:
-                document.getElementById(i).src = `Imagens/Grecia/${i}.jpeg`;
+                document.getElementById(i).src = `Imagens/Medio/Grecia/${i}.jpeg`;
                 document.getElementById(i).alt = `${num}`;
                 break;
             case 3:
-                document.getElementById(i).src = `Imagens/India/${i}.jpeg`;
+                document.getElementById(i).src = `Imagens/Medio/India/${i}.jpeg`;
                 document.getElementById(i).alt = `${num}`;
                 break;
             case 4:
-                document.getElementById(i).src = `Imagens/Italia/${i}.jpeg`;
+                document.getElementById(i).src = `Imagens/Medio/Italia/${i}.jpeg`;
                 document.getElementById(i).alt = `${num}`;
                 break;
             case 5:
-                document.getElementById(i).src = `Imagens/Peru/${i}.jpeg`;
+                document.getElementById(i).src = `Imagens/Medio/Peru/${i}.jpeg`;
                 document.getElementById(i).alt = `${num}`;
                 break;
         }
@@ -65,33 +65,33 @@ function mudar(num, image) {
 
         switch(num){
             case 0:
-                document.getElementById(image).src = `Imagens/Chile/${image}.jpeg`;
+                document.getElementById(image).src = `Imagens/Medio/Chile/${image}.jpeg`;
                 document.getElementById(image).alt = `${num}`;
             break;
             case 1:
-                document.getElementById(image).src = `Imagens/China/${image}.jpeg`;
+                document.getElementById(image).src = `Imagens/Medio/China/${image}.jpeg`;
                 document.getElementById(image).alt = `${num}`;
             break;
             case 2:
-                document.getElementById(image).src = `Imagens/Grecia/${image}.jpeg`;
+                document.getElementById(image).src = `Imagens/Medio/Grecia/${image}.jpeg`;
                 document.getElementById(image).alt = `${num}`;
             break;
             case 3:
-                document.getElementById(image).src = `Imagens/India/${image}.jpeg`;
+                document.getElementById(image).src = `Imagens/Medio/India/${image}.jpeg`;
                 document.getElementById(image).alt = `${num}`;
             break;
             case 4:
-                document.getElementById(image).src = `Imagens/Italia/${image}.jpeg`;
+                document.getElementById(image).src = `Imagens/Medio/Italia/${image}.jpeg`;
                 document.getElementById(image).alt = `${num}`;
             break;
             case 5:
-                document.getElementById(image).src = `Imagens/Peru/${image}.jpeg`;
+                document.getElementById(image).src = `Imagens/Medio/Peru/${image}.jpeg`;
                 document.getElementById(image).alt = `${num}`;
             break;
         }
-
-        verificaGanhou();
     }
+    if(!(Chile == -1 && China == -1 && Grecia == -1 && India == -1 && Italia == -1 && Peru == -1))
+        verificaGanhou();
 }
 
 function verificaGanhou(){
@@ -110,42 +110,48 @@ function verificaGanhou(){
             case '0':
                 Chile = -1;
                 acertouImagem(aux);
-                contadorTotal++;
+                if(contadorTotal < 6)
+                    contadorTotal++;
                 console.log(`ContadorTotal == ${contadorTotal}`);
                 setMiniatura(aux);
             break;
             case '1':
                 China = -1;
                 acertouImagem(aux);
-                contadorTotal++;
+                if(contadorTotal < 6)
+                    contadorTotal++;
                 console.log(`ContadorTotal == ${contadorTotal}`);
                 setMiniatura(aux);
             break;
             case '2':
                 Grecia = -1;
                 acertouImagem(aux);
-                contadorTotal++;
+                if(contadorTotal < 6)
+                    contadorTotal++;
                 console.log(`ContadorTotal == ${contadorTotal}`);
                 setMiniatura(aux);
             break;
             case '3':
                 India = -1;
                 acertouImagem(aux);
-                contadorTotal++;
+                if(contadorTotal < 6)
+                    contadorTotal++;
                 console.log(`ContadorTotal == ${contadorTotal}`);
                 setMiniatura(aux);
             break;
             case '4':
                 Italia = -1;
                 acertouImagem(aux);
-                contadorTotal++;
+                if(contadorTotal < 6)
+                    contadorTotal++;
                 console.log(`ContadorTotal == ${contadorTotal}`);
                 setMiniatura(aux);
             break;
             case '5':
                 Peru = -1;
                 acertouImagem(aux);
-                contadorTotal++;
+                if(contadorTotal < 6)
+                    contadorTotal++;
                 console.log(`ContadorTotal == ${contadorTotal}`);
                 setMiniatura(aux);
             break;
@@ -217,7 +223,7 @@ function acertouImagem(acertou){
     switch(acertou){
         case '0':
             modal = document.getElementById('acertouModal');
-            document.getElementById('acertou').src = `Imagens/Chile/Chile.jpg`;
+            document.getElementById('acertou').src = `Imagens/Medio/Chile/Chile.jpg`;
             modal.classList.add('mostrar');
 
             modal.addEventListener('click', (e) => {
@@ -244,7 +250,7 @@ function acertouImagem(acertou){
                         document.getElementById('texto').innerHTML = 'Parabéns!! Você acertou!!';
                     }
                     else{
-                        document.getElementById('decisao').src = 'Imagens/oie_transparent.png';
+                        document.getElementById('decisao').src = 'Imagens/wrong.png';
                         document.getElementById('texto').innerHTML = 'Que pena, você Errou!!';
                     }
                     document.getElementById('telaCertoErrado').classList.add('mostrar');
@@ -257,18 +263,17 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
-                    // if(contadorTotal == 6)
-                    //     verificaGanhou();
-                    // else{
+                    if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
+                        mudar(null,null);
+                    if(contadorTotal < 6){
                         mistura();
-                        verificaGanhou();
-                    // }
+                    }
                 }
             });
         break;
         case '1':
             modal = document.getElementById('acertouModal');
-            document.getElementById('acertou').src = `Imagens/China/China.jpg`;
+            document.getElementById('acertou').src = `Imagens/Medio/China/China.jpg`;
             modal.classList.add('mostrar');
 
             modal.addEventListener('click', (e) => {
@@ -295,7 +300,7 @@ function acertouImagem(acertou){
                         document.getElementById('texto').innerHTML = 'Parabéns!! Você acertou!!';
                     }
                     else{
-                        document.getElementById('decisao').src = 'Imagens/wrong.jpg';
+                        document.getElementById('decisao').src = 'Imagens/wrong.png';
                         document.getElementById('texto').innerHTML = 'Que pena, você Errou!!';
                     }
                     document.getElementById('telaCertoErrado').classList.add('mostrar');
@@ -308,18 +313,17 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
-                    // if(contadorTotal == 6)
-                    //     verificaGanhou();
-                    // else{
+                    if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
+                        mudar(null,null);
+                    if(contadorTotal < 6){
                         mistura();
-                        verificaGanhou();
-                    // }
+                    }
                 }
             });
         break;
         case '2':
             modal = document.getElementById('acertouModal');
-            document.getElementById('acertou').src = `Imagens/Grecia/Grecia.jpg`;
+            document.getElementById('acertou').src = `Imagens/Medio/Grecia/Grecia.jpg`;
             modal.classList.add('mostrar');
 
             modal.addEventListener('click', (e) => {
@@ -346,7 +350,7 @@ function acertouImagem(acertou){
                         document.getElementById('texto').innerHTML = 'Parabéns!! Você acertou!!';
                     }
                     else{
-                        document.getElementById('decisao').src = 'Imagens/wrong.jpg';
+                        document.getElementById('decisao').src = 'Imagens/wrong.png';
                         document.getElementById('texto').innerHTML = 'Que pena, você Errou!!';
                     }
                     document.getElementById('telaCertoErrado').classList.add('mostrar');
@@ -359,18 +363,17 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
-                    // if(contadorTotal == 6)
-                    //     verificaGanhou();
-                    // else{
+                    if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
+                        mudar(null,null);
+                    if(contadorTotal < 6){
                         mistura();
-                        verificaGanhou();
-                    // }
+                    }
                 }
             });
         break;
         case '3':
             modal = document.getElementById('acertouModal');
-            document.getElementById('acertou').src = `Imagens/India/India.jpg`;
+            document.getElementById('acertou').src = `Imagens/Medio/India/India.jpg`;
             modal.classList.add('mostrar');
 
             modal.addEventListener('click', (e) => {
@@ -397,7 +400,7 @@ function acertouImagem(acertou){
                         document.getElementById('texto').innerHTML = 'Parabéns!! Você acertou!!';
                     }
                     else{
-                        document.getElementById('decisao').src = 'Imagens/wrong.jpg';
+                        document.getElementById('decisao').src = 'Imagens/wrong.png';
                         document.getElementById('texto').innerHTML = 'Que pena, você Errou!!';
                     }
                     document.getElementById('telaCertoErrado').classList.add('mostrar');
@@ -410,18 +413,17 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
-                    // if(contadorTotal == 6)
-                    //     verificaGanhou();
-                    // else{
+                    if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
+                        mudar(null,null);
+                    if(contadorTotal < 6){
                         mistura();
-                        verificaGanhou();
-                    // }
+                    }
                 }
             });
         break;
         case '4':
             modal = document.getElementById('acertouModal');
-            document.getElementById('acertou').src = `Imagens/Italia/Italia.jpg`;
+            document.getElementById('acertou').src = `Imagens/Medio/Italia/Italia.jpg`;
             modal.classList.add('mostrar');
 
             modal.addEventListener('click', (e) => {
@@ -448,7 +450,7 @@ function acertouImagem(acertou){
                         document.getElementById('texto').innerHTML = 'Parabéns!! Você acertou!!';
                     }
                     else{
-                        document.getElementById('decisao').src = 'Imagens/wrong.jpg';
+                        document.getElementById('decisao').src = 'Imagens/wrong.png';
                         document.getElementById('texto').innerHTML = 'Que pena, você Errou!!';
                     }
                     document.getElementById('telaCertoErrado').classList.add('mostrar');
@@ -461,18 +463,17 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
-                    // if(contadorTotal == 6)
-                    //     verificaGanhou();
-                    // else{
+                    if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
+                        mudar(null,null);
+                    if(contadorTotal < 6){
                         mistura();
-                        verificaGanhou();
-                    // }
+                    }
                 }
             });
         break;
         case '5':
             modal = document.getElementById('acertouModal');
-            document.getElementById('acertou').src = `Imagens/Peru/Peru.jpg`;
+            document.getElementById('acertou').src = `Imagens/Medio/Peru/Peru.jpg`;
             modal.classList.add('mostrar');
 
             modal.addEventListener('click', (e) => {
@@ -499,7 +500,7 @@ function acertouImagem(acertou){
                         document.getElementById('texto').innerHTML = 'Parabéns!! Você acertou!!';
                     }
                     else{
-                        document.getElementById('decisao').src = 'Imagens/wrong.jpg';
+                        document.getElementById('decisao').src = 'Imagens/wrong.png';
                         document.getElementById('texto').innerHTML = 'Que pena, você Errou!!';
                     }
                     document.getElementById('telaCertoErrado').classList.add('mostrar');
@@ -512,12 +513,11 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
-                    // if(contadorTotal == 6)
-                    //     verificaGanhou();
-                    // else{
+                    if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
+                        mudar(null,null);
+                    if(contadorTotal < 6){
                         mistura();
-                        verificaGanhou();
-                    // }
+                    }
                 }
             });
         break;
@@ -527,27 +527,27 @@ function acertouImagem(acertou){
 function setMiniatura(aux){
     switch(aux){
         case '0':
-            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/Chile/Chile.jpg";
+            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/Medio/Chile/Chile.jpg";
             document.getElementById(`miniimg${contadorTotal}`).alt = "0";
         break;
         case '1':
-            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/China/China.jpg";
+            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/Medio/China/China.jpg";
             document.getElementById(`miniimg${contadorTotal}`).alt = "1";
         break;
         case '2':
-            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/Grecia/Grecia.jpg";
+            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/Medio/Grecia/Grecia.jpg";
             document.getElementById(`miniimg${contadorTotal}`).alt = "2";
         break;
         case '3':
-            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/India/India.jpg";
+            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/Medio/India/India.jpg";
             document.getElementById(`miniimg${contadorTotal}`).alt = "3";
         break;
         case '4':
-            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/Italia/Italia.jpg";
+            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/Medio/Italia/Italia.jpg";
             document.getElementById(`miniimg${contadorTotal}`).alt = "4";
         break;
         case '5':
-            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/Peru/Peru.jpg";
+            document.getElementById(`miniimg${contadorTotal}`).src = "Imagens/Medio/Peru/Peru.jpg";
             document.getElementById(`miniimg${contadorTotal}`).alt = "5";
         break;
     }
@@ -557,7 +557,7 @@ function mostrarcuriosidade(aux){
 
     switch(aux){
         case '0':
-            document.getElementById('imgcuriosidade').src = 'Imagens/Chile/Chile.jpg';
+            document.getElementById('imgcuriosidade').src = 'Imagens/Medio/Chile/Chile.jpg';
             document.getElementById('local').innerHTML = "Local: Ilha da Páscoa - País: Chile";
             document.getElementById('cur1').innerHTML = "O Chile possui o maior número de terremotos do mundo";
             document.getElementById('cur2').innerHTML = "Nele está localizada a maior torre da América Latina: Sky Costanera";
@@ -573,7 +573,7 @@ function mostrarcuriosidade(aux){
             });
         break;
         case '1':
-            document.getElementById('imgcuriosidade').src = 'Imagens/China/China.jpg';
+            document.getElementById('imgcuriosidade').src = 'Imagens/Medio/China/China.jpg';
             document.getElementById('local').innerHTML = "Local: Muralha da China - País: China";
             document.getElementById('cur1').innerHTML = "A Muralha da China mede mais cerca de 7200 Km de extensão";
             document.getElementById('cur2').innerHTML = "Na China é proibido o uso do Facebook, Twitter e The New York Times";
@@ -589,7 +589,7 @@ function mostrarcuriosidade(aux){
             });
         break;
         case '2':
-            document.getElementById('imgcuriosidade').src = 'Imagens/Grecia/Grecia.jpg';
+            document.getElementById('imgcuriosidade').src = 'Imagens/Medio/Grecia/Grecia.jpg';
             document.getElementById('local').innerHTML = "Local: Partenon - País: Grécia";
             document.getElementById('cur1').innerHTML = "Terra natal do 'pai' da medicina: Hipócrates";
             document.getElementById('cur2').innerHTML = "País onde nasceu a democracia";
@@ -605,7 +605,7 @@ function mostrarcuriosidade(aux){
             });
         break;
         case '3':
-            document.getElementById('imgcuriosidade').src = 'Imagens/India/India.jpg';
+            document.getElementById('imgcuriosidade').src = 'Imagens/Medio/India/India.jpg';
             document.getElementById('local').innerHTML = "Local: Taj Mahal - País: Índia";
             document.getElementById('cur1').innerHTML = "É muito como acontecer casamentos infantis neste país";
             document.getElementById('cur2').innerHTML = "Um dos pontos mais famosos do país é o Rio Ganges, que é considerado sagrado";
@@ -621,7 +621,7 @@ function mostrarcuriosidade(aux){
             });
         break;
         case '4':
-            document.getElementById('imgcuriosidade').src = 'Imagens/Italia/Italia.jpg';
+            document.getElementById('imgcuriosidade').src = 'Imagens/Medio/Italia/Italia.jpg';
             document.getElementById('local').innerHTML = "Local: Torre de Pisa - País: Itália";
             document.getElementById('cur1').innerHTML = "Milão é uma importante cidade do país, no quesito moda";
             document.getElementById('cur2').innerHTML = "Marcas famosas são deste país, como por exemplo Ferrari e Lamborghini";
@@ -637,7 +637,7 @@ function mostrarcuriosidade(aux){
             });
         break;
         case '5':
-            document.getElementById('imgcuriosidade').src = 'Imagens/Peru/Peru.jpg';
+            document.getElementById('imgcuriosidade').src = 'Imagens/Medio/Peru/Peru.jpg';
             document.getElementById('local').innerHTML = "Local: Machu Picchu - País: Peru";
             document.getElementById('cur1').innerHTML = "Uma das maiores dunas do mundo fica nesse país: as dunas Huacachina";
             document.getElementById('cur2').innerHTML = "O Deserto de Nazca é conhecido pelo aparecimento de OVNIs";

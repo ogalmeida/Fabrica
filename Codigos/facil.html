@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="facil.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|PT+Mono" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>Primeira imagem</title>
+	</head>
+	<body>
+		<div class="tela">
+			<div id="mosaico" class="tela">
+				<img class="img1" alt="1" id="0" src="Imagens/Facil/Cairo/0.jpeg" onmousedown="mudar(aleatorio(),'0')"/>
+				<img class="img1" alt="0" id="1" src="Imagens/Facil/Brasil/1.jpeg" onmousedown="mudar(aleatorio(),'1')"/>
+				<img class="img1" alt="0" id="2" src="Imagens/Facil/Brasil/2.jpeg" onmousedown="mudar(aleatorio(),'2')"/>
+				<img class="img1" alt="0" id="3" src="Imagens/Facil/Brasil/3.jpeg" onmousedown="mudar(aleatorio(),'3')"/><br>
+				<img class="img1" alt="0" id="4" src="Imagens/Facil/Brasil/4.jpeg" onmousedown="mudar(aleatorio(),'4')"/>
+				<img class="img1" alt="0" id="5" src="Imagens/Facil/Brasil/5.jpeg" onmousedown="mudar(aleatorio(),'5')"/>
+				<img class="img1" alt="0" id="6" src="Imagens/Facil/Brasil/6.jpeg" onmousedown="mudar(aleatorio(),'6')"/>
+				<img class="img1" alt="0" id="7" src="Imagens/Facil/Brasil/7.jpeg" onmousedown="mudar(aleatorio(),'7')"/><br>
+				<img class="img1" alt="0" id="8" src="Imagens/Facil/Brasil/8.jpeg" onmousedown="mudar(aleatorio(),'8')"/>
+				<img class="img1" alt="0" id="9" src="Imagens/Facil/Brasil/9.jpeg" onmousedown="mudar(aleatorio(),'9')"/>
+				<img class="img1" alt="0" id="10" src="Imagens/Facil/Brasil/10.jpeg" onmousedown="mudar(aleatorio(),'10')"/>
+				<img class="img1" alt="0" id="11" src="Imagens/Facil/Brasil/11.jpeg" onmousedown="mudar(aleatorio(),'11')"/><br>
+				<img class="img1" alt="0" id="12" src="Imagens/Facil/Brasil/12.jpeg" onmousedown="mudar(aleatorio(),'12')"/>
+				<img class="img1" alt="0" id="13" src="Imagens/Facil/Brasil/13.jpeg" onmousedown="mudar(aleatorio(),'13')"/>
+				<img class="img1" alt="0" id="14" src="Imagens/Facil/Brasil/14.jpeg" onmousedown="mudar(aleatorio(),'14')"/>
+				<img class="img1" alt="0" id="15" src="Imagens/Facil/Brasil/15.jpeg" onmousedown="mudar(aleatorio(),'15')"/><br>
+			</div>
+
+			<div id="mini" class="miniatura">
+				<div class="divide">
+					<div id="mini1" class="miniimg">
+						<img id="miniimg1" src="" alt="" onclick="mostrarcuriosidade(document.getElementById('miniimg1').alt)">
+					</div>
+					<div id="mini2" class="miniimg">
+						<img id="miniimg2" src="" alt="" onclick="mostrarcuriosidade(document.getElementById('miniimg2').alt)">
+					</div>
+				</div>
+				<div class="divide">
+					<div id="mini3" class="miniimg">
+						<img id="miniimg3" src="" alt="" onclick="mostrarcuriosidade(document.getElementById('miniimg3').alt)">
+					</div>
+					<div id="mini4" class="miniimg">
+						<img id="miniimg4" src="" alt="" onclick="mostrarcuriosidade(document.getElementById('miniimg4').alt)">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="controle">
+			<input type="button" class="botao ant" value="Anterior">
+			<input type="button" class="botao rec" value="Recomeçar" onclick="location.reload();">
+			<input type="button" class="botao prox" value="Próximo">
+			<input type="button" class="botao menu" value="Menu" onclick="location.href='main.html'">
+		</div>
+
+		<div id="acertouModal" class="modal">
+			<div class="modalacertou">
+				<div class="cabecalho">
+					<h1>Qual cidade dessa imagem?</h1>
+					<input id="submit" type="text" class="resposta" placeholder="Resposta">
+				</div>
+				<div class="corpo">
+					<div class="corpos">
+						<img id="acertou" class="acertouimg" src="Imagens/Facil/Brasil/Brasil.jpg" alt="Brasil">
+					</div>
+					<div class="corpos">
+						<p id="dica1"> </p>
+						<p id="dica2"> </p>
+						<p id="dica3"> </p>
+						<p id="dica4"> </p>
+					</div>
+					<!-- <div id="botoes" class="corpo">
+						<div class="corpos">
+							<input id="buttonDica" class="botao dica" type="button" value="Dica">
+						</div>
+						<div id="dica" class="corpos">
+							<input id="buttonOK" class="botao ok" type="button" value="OK">
+						</div>
+					</div> -->
+				</div>
+				<input id="buttonOK" class="botao ok" type="button" value="OK">
+				<input id="buttonDica" class="botao dica" type="button" value="Dica">
+			</div>
+		</div>
+
+		<div id="telaCertoErrado" class="modal">
+			<div class="modalacertou resposta">
+				<button id="botaoradius fechar" class="botaoradius fechar">X</button>
+				<div class="cabecalho">
+					<h1 id="texto"> </h1>
+				</div>
+				<div class="imgResposta">
+					<img id="decisao" src="Imagens/ok.png" alt="">
+				</div>
+			</div>
+		</div>
+
+		<div id="modalGanhou" class="modal">
+			<div class="modalacertou resposta">
+				<button id="botaoradius fechar" class="botaoradius fechar">X</button>
+				<div class="cabecalho">
+					<h1 id="texto">Parabéns!! Você completou todas as imagens</h1>
+				</div>
+				<div class="imgResposta">
+					<img id="parabens" src="Imagens/parabens.png" alt="">
+				</div>
+			</div>
+		</div>
+
+		<div id="curiosidades" class="modal">
+			<div class="modalacertou">
+				<button id="botaoradius fechar" class="botaoradius fechar">X</button>
+				<div class="cabecalho">
+					<h1 id="local">Qual a cidade dessa imagem?</h1>
+				</div>
+				<div class="corpo">
+					<div class="corpos">
+						<img id="imgcuriosidade" class="acertouimg" src="Imagens/Facil/Brasil/Brasil.jpg" alt="Brasil">
+					</div>
+					<div class="corpos">
+						<p id="cur1"> </p>
+						<p id="cur2"> </p>
+						<p id="cur3"> </p>
+						<p id="cur4"> </p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="telaInicio" class="modal mostrar">
+			<div id="teste" class="modalacertou tela">
+				<button id="botaoradius fechar" class="botaoradius fechar">X</button>
+				<div class="cabecalho">
+					<h1 id="local">Imagens deste nível</h1>
+				</div>
+				<div class="corpo init">
+					<div class="corpo1">
+						<div id="inicio1" class="imgini">
+							<img id="initimg" src="Imagens/Facil/Brasil/Brasil.jpg" alt="">
+							<img id="initimg" src="Imagens/Facil/Cairo/Cairo.jpg" alt="">
+						</div>
+					</div>
+					<div class="corpo1">
+						<div id="inicio1" class="imgini">
+                            <img id="initimg" src="Imagens/Facil/Paris/Paris.jpg" alt="">
+							<img id="initimg" src="Imagens/Facil/Roma/Roma.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+	</body>
+</html>
