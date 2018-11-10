@@ -8,6 +8,11 @@
     height: 20%;
 }
 
+.img3{
+    width: 7%;
+    height: 10%;
+}
+
 footer{
     width: 100%;
     background: gold;
@@ -47,14 +52,14 @@ input.botao{
 	box-shadow: 5px 5px 0 -2px #cbc6b9,  5px 5px 0 0 #988c77;
 }
 
-.controle{
-    background: gold;
-}
-
 .controle .botao{
     position: absolute;
     width: 15%;
     bottom: 5%;
+}
+
+.botao.prox.dif{
+    visibility: inherit;
 }
 
 .botao.ant{
@@ -177,6 +182,25 @@ input.botao{
     /* background: black; */
 }
 
+.miniatura.dif{
+    width: 35%;
+    position: absolute;
+    height: auto;
+    margin-top: 30px;
+    right: 5px;
+}
+
+.miniimg.dif > img{
+    margin: 5px;
+    margin-bottom: 20px;
+}
+
+.imgini.dif > img{
+    width: 21%;
+    margin: 10px;
+    /* padding: 20px; */
+}
+
 .imgini > img{
     width: 30%;
     margin: 10px;
@@ -242,4 +266,19 @@ input.botao{
 
 .modal.mostrar{
     display: flex;
+}
+
+@keyframes aparece{
+    from{
+        opacity: 0;
+        transform: translate3d(0,-60px,0);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+.mostrar.modal{
+    animation: aparece .3s;
 }

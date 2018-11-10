@@ -263,6 +263,7 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
+                    cont = 0;
                     if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
                         mudar(null,null);
                     if(contadorTotal < 6){
@@ -313,6 +314,7 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
+                    cont = 0;
                     if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
                         mudar(null,null);
                     if(contadorTotal < 6){
@@ -363,6 +365,7 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
+                    cont = 0;
                     if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
                         mudar(null,null);
                     if(contadorTotal < 6){
@@ -413,6 +416,7 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
+                    cont = 0;
                     if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
                         mudar(null,null);
                     if(contadorTotal < 6){
@@ -463,6 +467,7 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
+                    cont = 0;
                     if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
                         mudar(null,null);
                     if(contadorTotal < 6){
@@ -513,6 +518,7 @@ function acertouImagem(acertou){
                     for(let i = 0; i < 4; i++){
                         document.getElementById(`dica${i+1}`).innerHTML = " ";
                     }
+                    cont = 0;
                     if(contadorTotal == 6 && (Chile == 0 || China == 0 || Grecia == 0 || India == 0 || Italia == 0 || Peru == 0))
                         mudar(null,null);
                     if(contadorTotal < 6){
@@ -679,4 +685,45 @@ function removerAcentos( newStringComAcento ) {
         string = string.replace( expressaoRegular, letra );
     }
     return string;
+}
+
+function monta(aux){
+    switch(aux){
+        case 0:
+            for(let i = 1; i < 36;i++){
+                document.getElementById(i).src = `Imagens/Medio/Chile/${i}.jpeg`;
+                document.getElementById(i).alt = `${aux}`;
+            }
+        break;
+        case 1:
+            for(let i = 1; i < 36;i++){
+                document.getElementById(i).src = `Imagens/Medio/China/${i}.jpeg`;
+                document.getElementById(i).alt = `${aux}`;
+            }
+        break;
+        case 2:
+            for(let i = 1; i < 36;i++){
+                document.getElementById(i).src = `Imagens/Medio/Grecia/${i}.jpeg`;
+                document.getElementById(i).alt = `${aux}`;
+            }
+        break;
+        case 3:
+            for(let i = 1; i < 36;i++){
+                document.getElementById(i).src = `Imagens/Medio/India/${i}.jpeg`;
+                document.getElementById(i).alt = `${aux}`;
+            }
+        break;
+        case 4:
+            for(let i = 1; i < 36;i++){
+                document.getElementById(i).src = `Imagens/Medio/Italia/${i}.jpeg`;
+                document.getElementById(i).alt = `${aux}`;
+            }
+        break;
+        case 5:
+            for(let i = 1; i < 36;i++){
+                document.getElementById(i).src = `Imagens/Medio/Peru/${i}.jpeg`;
+                document.getElementById(i).alt = `${aux}`;
+            }
+        break;
+    }
 }

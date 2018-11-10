@@ -495,3 +495,32 @@ function removerAcentos( newStringComAcento ) {
     }
     return string;
 }
+
+function monta(aux){
+    switch(aux){
+        case 0:
+            for(let i = 1; i < 16;i++){
+                document.getElementById(i).src = `Imagens/Facil/Brasil/${i}.jpeg`;
+                document.getElementById(i).alt = `${aux}`;
+            }
+        break;
+        case 1:
+            for(let i = 1; i < 16;i++){
+                document.getElementById(i).src = `Imagens/Facil/Cairo/${i}.jpeg`;
+                document.getElementById(i).alt = `${aux}`;
+            }
+        break;
+        case 2:
+            for(let i = 1; i < 16;i++){
+                document.getElementById(i).src = `Imagens/Facil/Paris/${i}.jpeg`;
+                document.getElementById(i).alt = `${aux}`;
+            }
+        break;
+        case 3:
+            for(let i = 1; i < 16;i++){
+                document.getElementById(i).src = `Imagens/Facil/Roma/${i}.jpeg`;
+                document.getElementById(i).alt = `${aux}`;
+            }
+        break;
+    }
+}
